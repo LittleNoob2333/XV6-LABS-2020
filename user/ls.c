@@ -17,6 +17,7 @@ fmtname(char *path)
   // Return blank-padded name.
   if(strlen(p) >= DIRSIZ)
     return p;
+  
   memmove(buf, p, strlen(p));
   memset(buf+strlen(p), ' ', DIRSIZ-strlen(p));
   return buf;
@@ -40,10 +41,9 @@ ls(char *path)
     close(fd);
     return;
   }
-
   switch(st.type){
   case T_FILE:
-    printf("%s %d %d %l\n", fmtname(path), st.type, st.ino, st.size);
+    printf("%s %d %d %l dasdas\n", fmtname(path), st.type, st.ino, st.size);
     break;
 
   case T_DIR:
